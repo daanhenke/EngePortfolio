@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <style>
+        .vizCanvas {
+            position: absolute;
+            left: 0;
+            top: 0;
+            z-index: -1337;
+
+            background-color: #282828;
+        }
+
+        body {
+            background-color: #282828;
+        }
+    </style>
+</head>
+<body>
+<a onclick="viz.smoothPlay()">Play</a>
+<a onclick="viz.smoothMute()">Pause</a>
+<script src="viz.js"></script>
+<script src="viz-bars.js"></script>
+<script>
+    var viz;
+    window.onload = function () {
+        viz = Viz("audio.mp3", undefined, {
+            autoplay: false
+        });
+
+        var canvas = viz.getCanvasElement();
+        canvas.classList.add("vizCanvas");
+
+        document.body.appendChild(canvas);
+        document.body.appendChild(viz.getAudioElement());
+
+    }
+</script>
+</body>
+</html>
