@@ -1,0 +1,103 @@
+@color-primary: #30ee78;
+@color-secondary: #282828;
+
+@color-text-emphasis: #ebeaa9;
+@color-text-normal: #ebdbb2;
+
+@font-main: 'Roboto Condensed', sans-serif;
+
+body {
+  background-color: @color-secondary;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: @font-main;
+}
+
+p {
+  font-family: @font-main;
+}
+
+div.swagbox {
+  background-color: @color-secondary;
+  border: solid 4px @color-primary;
+
+  margin-top: 2vmin;
+  margin-bottom: 2vmin;
+
+  padding-top: 5vmin;
+  padding-bottom: 5vmin;
+
+  height: 90%;
+  max-height: 90%;
+
+  word-wrap: break-word;
+
+  box-shadow: 10px 10px 5px #191919;
+
+  //width: 100%;
+}
+
+div.swagbox > h1 {
+  color: @color-text-emphasis;
+
+  font-size: 3em;
+  margin: 1em;
+
+  text-align: center;
+}
+
+div.swagbox > p {
+  color: @color-text-normal;
+
+  font-size: 1em;
+  margin: 0em 0 2em 2em;
+
+  text-align: center;
+}
+
+div.container {
+  width: 80%;
+}
+
+p.important {
+  font-size: 2em !important;
+}
+
+img.swag-round {
+  border-radius: 50%;
+  width: 70%;
+
+  display: block;
+
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.align-right {
+  text-align: right !important;
+}
+
+.align-left {
+  text-align: left !important;
+}
+
+.sketch {
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  z-index: -1337;
+}
+
+.hidden {
+  display: none;
+}
+
+div.swagbox.transparant {
+  opacity: 0.9;
+}
+
+audio {
+  display: none;
+}
