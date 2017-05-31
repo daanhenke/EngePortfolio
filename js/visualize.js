@@ -218,19 +218,35 @@ var globvars = {};
 
 globvars.play = function () {
     globvars.analyser.start();
-    globvars.sketch.removeClass("hidden");
-    $("div.swagbox").addClass("transparant")
+    var intID = setInterval(function () {
+        if (globvars.analyser.audio.volume >= 0.99) {
+            clearInterval(intID);
+            $("div.swagbox").addClass("transparant");
+            globvars.sketch.removeClass("hidden");
+        }
+        else
+            globvars.analyser.audio.volume += 0.03;
+    }, 10);
 };
 
 globvars.pause = function () {
-    globvars.analyser.stop();
-    globvars.sketch.addClass("hidden");
+    var intID = setInterval(function () {
+        if (globvars.analyser.audio.volume <= 0.04) {
+            clearInterval(intID);
+            globvars.analyser.stop();
+        }
+        else
+            globvars.analyser.audio.volume -= 0.03;
+    }, 10);
     $("div.swagbox").removeClass("transparant");
+    globvars.sketch.addClass("hidden");
+
 };
 
 globvars.playing = false;
 
 $(function () {
+    globvars.analyser.audio.volume = 0;
     $("#easteregg").click(function () {
         console.log("hi");
         if (globvars.playing) {
