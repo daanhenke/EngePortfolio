@@ -5,7 +5,8 @@ whatami.sentences = [
     "a professional web developer",
     "a fast worker",
     "a student",
-    "a geek"
+    "a geek",
+    "a goon spotter a matskees"
 ];
 
 whatami.init = function () {
@@ -14,7 +15,8 @@ whatami.init = function () {
         typeSpeed: 15,
         backSpeed: 2,
         loop: true,
-        backDelay: 4000
+        backDelay: 4000,
+        shuffle: true
     });
 };
 

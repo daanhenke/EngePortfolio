@@ -22,17 +22,28 @@
 <body>
 <a onclick="viz.smoothPlay()">Play</a>
 <a onclick="viz.smoothMute()">Pause</a>
-<script src="viz.js"></script>
+<script src="../js/viz.js"></script>
 <script src="viz-bars.js"></script>
+<script src="../js/viz-bubbles.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script>
     var viz;
     window.onload = function () {
         viz = Viz("audio.mp3", undefined, {
-            autoplay: false
+            autoplay: true,
+            chosenVisualizer: "bubbles",
+            visualizer_options: {
+                bubbles: 10,
+                colours: ["#b037b9", "#e5a3eb", "#96a6b6", "#6c869e", "#548942"]
+            }
         });
 
         var canvas = viz.getCanvasElement();
         canvas.classList.add("vizCanvas");
+
+        window.onresize = function () {
+            viz.resizeCanvas();
+        };
 
         document.body.appendChild(canvas);
         document.body.appendChild(viz.getAudioElement());

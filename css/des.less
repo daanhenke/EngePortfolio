@@ -37,7 +37,7 @@ div.swagbox {
 
   box-shadow: 10px 10px 5px #191919;
 
-  //width: 100%;
+  opacity: 0.95;
 }
 
 div.swagbox > h1 {
@@ -87,22 +87,23 @@ img.swag-round {
 
 //Visualizer
 
-.sketch {
-  position: fixed;
-  top: 0;
+#canvasContainer {
+  position: static;
   left: 0;
-
+  top: 0;
   z-index: -1337;
+
+  background-color: @color-secondary;
 }
 
 .hidden {
   display: none;
 }
 
-div.swagbox.transparant {
-  opacity: 0.9;
-}
-
-audio {
-  display: none;
+canvas {
+  z-index: -1337;
+  display: block!important;
+  position: fixed!important;
+  top: 0!important;
+  left: 0!important;
 }
