@@ -1,7 +1,7 @@
 var viz;
 window.onload = function () {
-    viz = Viz("mp3/bg.mp3", undefined, {
-        autoplay: true,
+    viz = Viz("http://20043.live.streamtheworld.com/SLAM_MP3_SC?", undefined, {
+        autoplay: false,
         chosenVisualizer: "bubbles",
         smoothTime: 5000,
         visualizer_options: {
